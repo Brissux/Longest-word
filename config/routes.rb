@@ -9,10 +9,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-   resources :parties, only: [:new] do
+
+  resources :parties, only: [:new] do
     collection do
       post :score
     end
   end
-
 end

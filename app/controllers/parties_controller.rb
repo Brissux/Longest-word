@@ -24,6 +24,8 @@ class PartiesController < ApplicationController
     @input_word = params[:party][:word].downcase
     @letters = params[:party][:ten_letters_list].downcase.chars
     @verif = include?(@input_word, @letters)
+
+    #calcule marche pas 
     if @verif
       @score += @input_word.length
     else
