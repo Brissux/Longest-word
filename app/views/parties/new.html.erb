@@ -1,0 +1,20 @@
+<h1>coucou</h1>
+
+
+<div class="d-flex">
+  <% @letters.each do |letter| %>
+    <p><%= letter %></p>
+  <% end %>
+</div>
+
+<%= simple_form_for :party, url: score_parties_path, method: :post do |f| %>
+  <%= f.input :word %>
+  <%= f.hidden_field :ten_letters_list, value: @letters.join %>
+  <%= f.button :submit, "Jouer" %>
+<% end %>
+
+
+
+<% if @score %>
+  <p>score: <%= @score %> </p>
+<% end %>
